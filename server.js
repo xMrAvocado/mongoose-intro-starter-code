@@ -14,13 +14,6 @@ app.use(express.static("public"));
 app.use(express.json()); // recognize an incoming Request Object as a JSON Object
 app.use(express.urlencoded({ extended: false })); // recognize an incoming Request Object as a string or array
 
-const FRONTEND_URL = process.env.ORIGIN || "http://localhost:5173";
-app.use(
-  cors({
-    origin: [FRONTEND_URL]
-  })
-);
-
 
 // all routes here...
 app.get("/", (req, res, next) => {
