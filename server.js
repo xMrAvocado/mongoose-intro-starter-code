@@ -6,6 +6,11 @@ const cors = require("cors");
 
 const app = express();
 
+// to allow CORS access from anywhere
+app.use(cors({
+  origin: '*'
+}));
+
 // all middlewares & configurations here
 app.use(logger("dev"));
 app.use(express.static("public"));
