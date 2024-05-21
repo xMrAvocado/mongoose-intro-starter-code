@@ -6,14 +6,14 @@ const cors = require("cors");
 
 const app = express();
 
+// all middlewares & configurations here
+app.use(logger("dev"));
+app.use(express.static("public"));
+
 // to allow CORS access from anywhere
 app.use(cors({
   origin: '*'
 }));
-
-// all middlewares & configurations here
-app.use(logger("dev"));
-app.use(express.static("public"));
 
 // below two configurations will help express routes at correctly receiving data. 
 app.use(express.json()); // recognize an incoming Request Object as a JSON Object
