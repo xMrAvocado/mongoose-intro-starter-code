@@ -1,4 +1,4 @@
-require("dotenv").config();
+process.loadEnvFile()
 
 const express = require("express");
 const logger = require("morgan");
